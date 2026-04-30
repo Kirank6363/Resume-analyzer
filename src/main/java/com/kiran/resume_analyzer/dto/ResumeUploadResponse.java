@@ -4,7 +4,8 @@ public record ResumeUploadResponse(
         String message,
         String fileName,
         String contentType,
-        long size
+        long size,
+        String extractedText
 ) {
 
 
