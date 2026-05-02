@@ -1,4 +1,10 @@
 package com.kiran.resume_analyzer.model;
 
-public class CandidateProfile {
+import java.util.List;
+
+public record CandidateProfile(
+        List<String> skills,
+        List<String> roles,
+        List<String> experienceHighlights
+) {
 }
