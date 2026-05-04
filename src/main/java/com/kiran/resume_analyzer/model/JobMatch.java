@@ -7,6 +7,7 @@ public record JobMatch(
         String company,
         String applyLink,
         List<String> matchedSkills,
+        List<String> missingSkills,
         int matchScore
 ){
 }

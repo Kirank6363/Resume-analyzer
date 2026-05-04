@@ -6,6 +6,7 @@ public record JobPosting (
         String title,
         String company,
         String applyLink,
+        String description,
         List<String> requiredSkills,
         String role
 ){

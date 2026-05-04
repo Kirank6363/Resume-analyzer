@@ -22,21 +22,9 @@ public class ResumeAnalysisService {
     public CandidateProfile analyzeResume(String extractedText) {
         String normalizedText = extractedText.toLowerCase();
 
-        List<String> matchedSkills = new ArrayList<>();
-        List<String> matchedRoles = new ArrayList<>();
+        List<String> matchedSkills = extractSkills(normalizedText);
+        List<String> matchedRoles = extractRoles(normalizedText);
         List<String> experienceHighlights = new ArrayList<>();
-
-        for (String skill : KNOWN_SKILLS) {
-            if (normalizedText.contains(skill)) {
-                matchedSkills.add(skill);
-            }
-        }
-
-        for (String role : KNOWN_ROLES) {
-            if (normalizedText.contains(role)) {
-                matchedRoles.add(role);
-            }
-        }
 
         if (normalizedText.contains("intern")) {
             experienceHighlights.add("Internship experience");
@@ -51,5 +39,31 @@ public class ResumeAnalysisService {
         }
 
         return new CandidateProfile(matchedSkills, matchedRoles, experienceHighlights);
+    }
+
+    public List<String> extractSkills(String text) {
+        String normalizedText = text.toLowerCase();
+        List<String> matchedSkills = new ArrayList<>();
+
+        for (String skill : KNOWN_SKILLS) {
+            if (normalizedText.contains(skill)) {
+                matchedSkills.add(skill);
+            }
+        }
+
+        return matchedSkills;
+    }
+
+    public List<String> extractRoles(String text) {
+        String normalizedText = text.toLowerCase();
+        List<String> matchedRoles = new ArrayList<>();
+
+        for (String role : KNOWN_ROLES) {
+            if (normalizedText.contains(role)) {
+                matchedRoles.add(role);
+            }
+        }
+
+        return matchedRoles;
     }
 }
