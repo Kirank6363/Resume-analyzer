@@ -9,6 +9,12 @@ It lets a user:
 - fetch live jobs from Adzuna
 - show matching job links, match scores, and missing skills
 
+## Live Demo
+
+- Frontend: [https://resume-analyzer-two-ruby.vercel.app/](https://resume-analyzer-two-ruby.vercel.app/)
+- Backend API: [https://resume-analyzer-a4pb.onrender.com/](https://resume-analyzer-a4pb.onrender.com/)
+- Health Check: [https://resume-analyzer-a4pb.onrender.com/health](https://resume-analyzer-a4pb.onrender.com/health)
+
 ## Tech Stack
 
 - Backend: Spring Boot
